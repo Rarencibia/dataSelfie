@@ -1,0 +1,59 @@
+## my project
+
+## generic
+._*
+
+## sqlite
+*.sqlite
+
+## c++
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles
+*.app
+release
+mingw_release
+build
+mingw_build
+mingw_build_debug
+*.[oa]
+
+#node.js
+package-lock.json
+node_modules
+
+#build files
+*.out
+
+#visual studio
+.vscode
+
+# xcode
+xcode
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+
+# codeblocks
+gmon.out
+
+### - mac - ###
+.DS_Store
+
+
+# repositories
+.hg
+.svn
+CVS
+
+# automatic backup files
+*~.nib
+*.swp
+*~
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
