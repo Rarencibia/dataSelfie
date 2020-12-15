@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Selfie App</h1>
+    <p>Hello!</p>
+
+    <p>latitude: <span id="latitude"></span>&deg <br>
+    longitude: <span id="longitude"></span>&deg</p>
+    
+    <label for="favoriteVacation">Where was your favorite vacation location?</label>
+    <input type="text" name="favoriteVacation" id="favoriteVacation">
+    <button type="submit" id="vacationButton">Submit</button>
+
+    <script>
+        if('geolocation' in navigator) {
+            console.log('Geolocation is available');
+            navigator.geolocation.getCurrentPosition( async position => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                document.getElementById('latitude').textContent = lat;
+                document.getElementById('longitude').textContent = lon;
+
+                const data = {lat, lon};
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                };
+                const response = await fetch('/api', options);
+                const json = await response.json();
+                console.log(json);
+            });
+        } else {
+            console.log("Geolocation is not available");
+        }
+
+
+
+    </script>
+
+        <script src="question.js"></script>
+
+    
+
+</body>
+</html>
